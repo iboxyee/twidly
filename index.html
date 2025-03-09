@@ -7,8 +7,36 @@
 
 </head>
 <body>
+<div class="dropdown">
+    <label for="categoryFilter">Filter by: </label>
+    <select id="categoryFilter" onchange="filterVideos()">
+        <option value="all">All Videos</option>
+        <option value="trending">Trending</option>
+        <option value="archive">Archive</option>
+        <option value="ranking">Ranking</option>
+        <option value="realtime">Realtime</option>
+    </select>
+</div>
 
-    <div class="content" id="content">Ini adalah pesan status.</div>
+<!-- Grid untuk Video -->
+<div id="videoGrid" class="video-grid"></div>
+
+<!-- Tombol Floating ke Halaman Favorit -->
+<button class="floating-btn" onclick="showFavoritePage()">⛓️</button>
+
+<!-- Pagination -->
+<div class="pagination">
+    <button id="nextBtn" onclick="nextPage()">Next</button>
+    <button id="shuffleBtn" onclick="shuffleAndDisplay()">Acak</button>
+</div>
+
+<!-- Halaman Favorit -->
+<div id="favorites" style="display:none;">
+    <h1>Favorite Videos</h1>
+    <div id="favoriteGrid" class="video-grid"></div>
+    <div id="noFavoritesMessage"></div>
+    <a href="#" class="backBtn" onclick="showMainPage()">Kembali ke Halaman Utama</a>
+</div>
 
 </body>
 </html>
